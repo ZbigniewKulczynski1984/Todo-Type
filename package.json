@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ZbigniewKulczynski1984/Type/issues"
   },
-  "homepage": "https://github.com/ZbigniewKulczynski1984/Type#readme"
+  "homepage": "https://github.com/ZbigniewKulczynski1984/Type#readme",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
 }

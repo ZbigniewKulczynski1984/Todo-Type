@@ -43,22 +43,19 @@ function render(todos: Todo[]) {
 render(todos);
 
 const renderCategories = () => {
-	const categoryList: HTMLUListElement = document.querySelector('.category');
-	categories.forEach((category: Category) => {
-		const li: HTMLLIElement = document.createElement('li');
-
-		const input = document.createElement('input');
-		input.setAttribute('type', 'radio');
-		input.setAttribute('name', 'category');
-		input.setAttribute('value', category);
-    li.appendChild(input)
-
-		const label = document.createElement('label');
-		label.textContent = category;
-
-		li.appendChild(label);
-		categoryList.appendChild(li)
-	});
+  const categoryContainer: HTMLUListElement =
+    document.querySelector(".categories");
+  categories.forEach((category: Category) => {
+    const li = document.createElement("li");
+    const input = document.createElement("input");
+    input.setAttribute("type", "radio");
+    input.setAttribute("name", "category");
+    input.setAttribute("value", category);
+    li.appendChild(input);
+    const label = document.createElement("label");
+    label.textContent = category;
+    li.appendChild(label);
+    categoryContainer.appendChild(li);
+  });
 };
-
 renderCategories();

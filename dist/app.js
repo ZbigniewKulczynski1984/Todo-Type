@@ -34,18 +34,18 @@ function render(todos) {
 }
 render(todos);
 const renderCategories = () => {
-    const categoryList = document.querySelector('.category');
+    const categoryContainer = document.querySelector(".categories");
     categories.forEach((category) => {
-        const li = document.createElement('li');
-        const input = document.createElement('input');
-        input.setAttribute('type', 'radio');
-        input.setAttribute('name', 'category');
-        input.setAttribute('value', category);
+        const li = document.createElement("li");
+        const input = document.createElement("input");
+        input.setAttribute("type", "radio");
+        input.setAttribute("name", "category");
+        input.setAttribute("value", category);
         li.appendChild(input);
-        const label = document.createElement('label');
+        const label = document.createElement("label");
         label.textContent = category;
         li.appendChild(label);
-        categoryList.appendChild(li);
+        categoryContainer.appendChild(li);
     });
 };
 renderCategories();

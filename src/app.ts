@@ -57,7 +57,7 @@ const renderCategories = () => {
 		label.textContent = category;
 
 		li.appendChild(label);
-		categoryList.appendChild(li);
+		categoryList.appendChild(li)
 	});
 };
 

@@ -1,25 +1,52 @@
-// const button:HTMLButtonElement = document.querySelector('button');
-// const categoryList:HTMLUListElement = document.querySelector('.category');
+const button = document.querySelector('button');
 const todosList = document.querySelector('.todos');
-const categories = ["life", "work", "sport", "education"];
+const categories = ['life', 'work', 'sport', 'education'];
 const todos = [
     {
-        title: "Wyrzucić śmieci",
+        title: 'Wyrzucić śmieci',
         done: false,
-        category: "life",
+        category: 'life',
     },
     {
-        title: "Pójść na siłke",
+        title: 'Pójść na siłke',
         done: true,
-        category: "sport",
+        category: 'sport',
     },
     {
-        title: "Nakarmić psa",
+        title: 'Nakarmić psa',
         done: false,
-        category: "work",
+        category: 'work',
     },
 ];
 function render(todos) {
-    todos.for;
+    todos.forEach((todo) => {
+        const li = document.createElement('li');
+        li.setAttribute('class', todo.category);
+        li.textContent = `${todo.title} (${todo.category})`;
+        const input = document.createElement('input');
+        input.setAttribute('type', 'checkbox');
+        input.setAttribute('checked', `${todo.done}`);
+        li.appendChild(input);
+        input.addEventListener('click', () => {
+            todo.done ? (todo.done = false) : (todo.done = true);
+        });
+    });
 }
+render(todos);
+const renderCategories = () => {
+    const categoryList = document.querySelector('.category');
+    categories.forEach((category) => {
+        const li = document.createElement('li');
+        const input = document.createElement('input');
+        input.setAttribute('type', 'radio');
+        input.setAttribute('name', 'category');
+        input.setAttribute('value', category);
+        li.appendChild(input);
+        const label = document.createElement('label');
+        label.textContent = category;
+        li.appendChild(label);
+        categoryList.appendChild(li);
+    });
+};
+renderCategories();
 export {};

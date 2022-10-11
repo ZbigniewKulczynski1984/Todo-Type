@@ -1,6 +1,5 @@
 const button = document.querySelector('button');
 const categoryList = document.querySelector('.category');
-//--------------------
 const calculatePrice = (originalPrice, hasDiscount) => hasDiscount ? originalPrice * 0.8 : originalPrice;
 button.addEventListener('click', () => {
     const hasDiscount = Math.random() > 0.5 ? true : false;

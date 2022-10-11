@@ -19,4 +19,7 @@ const todos = [
         category: "work",
     },
 ];
+function render(todos) {
+    todos.for;
+}
 export {};

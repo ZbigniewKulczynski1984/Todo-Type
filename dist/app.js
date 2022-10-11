@@ -1,8 +1,22 @@
-const button = document.querySelector('button');
-const categoryList = document.querySelector('.category');
-const calculatePrice = (originalPrice, hasDiscount) => hasDiscount ? originalPrice * 0.8 : originalPrice;
-button.addEventListener('click', () => {
-    const hasDiscount = Math.random() > 0.5 ? true : false;
-    const price = +document.querySelector('input').value;
-    console.log(`you have to pay ${calculatePrice(price, hasDiscount)}`);
-});
+// const button:HTMLButtonElement = document.querySelector('button');
+// const categoryList:HTMLUListElement = document.querySelector('.category');
+const todosList = document.querySelector('.todos');
+const categories = ["life", "work", "sport", "education"];
+const todos = [
+    {
+        title: "Wyrzucić śmieci",
+        done: false,
+        category: "life",
+    },
+    {
+        title: "Pójść na siłke",
+        done: true,
+        category: "sport",
+    },
+    {
+        title: "Nakarmić psa",
+        done: false,
+        category: "work",
+    },
+];
+export {};

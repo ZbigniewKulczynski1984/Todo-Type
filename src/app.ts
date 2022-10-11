@@ -1,7 +1,7 @@
 import { Category, Todo } from './helpers/interfaces';
 
-// const button:HTMLButtonElement = document.querySelector('button');
-// const categoryList:HTMLUListElement = document.querySelector('.category');
+const button: HTMLButtonElement = document.querySelector('button');
+
 const todosList: HTMLUListElement = document.querySelector('.todos');
 
 const categories: Category[] = ['life', 'work', 'sport', 'education'];
@@ -40,4 +40,25 @@ function render(todos: Todo[]) {
 		});
 	});
 }
+render(todos);
 
+const renderCategories = () => {
+	const categoryList: HTMLUListElement = document.querySelector('.category');
+	categories.forEach((category: Category) => {
+		const li: HTMLLIElement = document.createElement('li');
+
+		const input = document.createElement('input');
+		input.setAttribute('type', 'radio');
+		input.setAttribute('name', 'category');
+		input.setAttribute('value', category);
+    li.appendChild(input)
+
+		const label = document.createElement('label');
+		label.textContent = category;
+
+		li.appendChild(label);
+		categoryList.appendChild(li);
+	});
+};
+
+renderCategories();
